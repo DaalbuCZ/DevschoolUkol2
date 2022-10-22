@@ -18,53 +18,70 @@ public class SmartChess {
         System.out.println(boardSize);
 
         System.out.print('+');
-        for (int i = 0; i < boardSize; i++)
+        for (int i = 0; i < boardSize * fieldSize; i++)
             System.out.print('-');
         System.out.println('+');
 
-        if(boardSize % 2 == 1){
-            System.out.print('|');
-            for (int i = 0; i < boardSize / 2; i++) {
-                for (int x = 0; x < boardSize / 2; x++) {
-                    System.out.print('x');
-                    System.out.print(' ');
-                }
-                System.out.print('x');
-                System.out.print("|\n|");
-
-                for (int x = 0; x < boardSize / 2; x++) {
-                    System.out.print(' ');
-                    System.out.print('x');
-                }
-                System.out.print(' ');
-                System.out.print("|\n|");
-            }
-            for (int x = 0; x < boardSize / 2; x++) {
-                System.out.print('x');
-                System.out.print(' ');
-            }
-            System.out.print('x');
-            System.out.print("|\n");
-
-        }else{
-
-            for (int i = 0; i < boardSize / 2; i++) {
+        for (int i = 0; i < boardSize / 2; i++) {
+            for (int j = 0; j < fieldSize; j++) {
                 System.out.print('|');
-                for (int x = 0; x < boardSize / 2; x++) {
-                    System.out.print('x');
-                    System.out.print(' ');
-                }
-                System.out.print("|\n|");
+                for (int k = 0; k < boardSize / 2; k++) {
 
-                for (int x = 0; x < boardSize / 2; x++) {
-                    System.out.print(' ');
-                    System.out.print('x');
+                    for (int l = 0; l < fieldSize; l++) {
+                        System.out.print('x');
+                    }
+                    for (int l = 0; l < fieldSize; l++) {
+                        System.out.print(' ');
+                    }
                 }
-                System.out.print("|\n");
+                if (boardSize % 2 ==1) {
+                    for (int k = 0; k < fieldSize; k++) {
+                        System.out.print('x');
+                    }
+                }
+                System.out.println('|');
+            }
+
+            for (int j = 0; j < fieldSize; j++) {
+                System.out.print('|');
+                for (int k = 0; k < boardSize / 2; k++) {
+
+                    for (int l = 0; l < fieldSize; l++) {
+                        System.out.print(' ');
+                    }
+                    for (int l = 0; l < fieldSize; l++) {
+                        System.out.print('x');
+                    }
+                }
+                if (boardSize % 2 == 1) {
+                    for (int k = 0; k < fieldSize; k++) {
+                        System.out.print(' ');
+                    }
+                }
+                System.out.println('|');
             }
         }
+        if (boardSize % 2 ==1) {
+            for (int j = 0; j < fieldSize; j++) {
+                System.out.print('|');
+                for (int k = 0; k < boardSize / 2; k++) {
+
+                    for (int l = 0; l < fieldSize; l++) {
+                        System.out.print('x');
+                    }
+                    for (int l = 0; l < fieldSize; l++) {
+                        System.out.print(' ');
+                    }
+                }
+                for (int k = 0; k < fieldSize; k++) {
+                    System.out.print('x');
+                }
+                System.out.println('|');
+            }
+        }
+
         System.out.print('+');
-        for (int i = 0; i < boardSize; i++)
+        for (int i = 0; i < boardSize * fieldSize; i++)
             System.out.print('-');
         System.out.println('+');
     }
